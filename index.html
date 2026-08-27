@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Portfolio - Aina Herinjato</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/8fd46e80f1.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <!-- Ajout d'une classe header-container pour gérer le flex sans utiliser <section> -->
     <header>
-        <section class="Acueil">
+        <div class="header-container">
             <div class="logo-div">
                 <div class="logo">
                     <p>Aina.<span>Herinjato</span></p>
@@ -16,16 +18,17 @@
             </div>
             <nav class="menu">
                 <ul>
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href="#">SERVICES</a></li>
-                    <li><a href="#">CONTACT</a></li>
+                    <li><a href="#accueil">HOME</a></li>
+                    <li><a href="#a-propos">ABOUT</a></li>
+                    <li><a href="#services">SERVICES</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
                 </ul>
             </nav>
-        </section>
+        </div>
     </header>
 
-    <section class="introduction">
+    <!-- Ajout des ID pour la navigation -->
+    <section class="introduction" id="accueil">
         <div class="gauche">
             <div class="titre">
                 <h1>Aina Herinjato - <br> Trader Gold & Développeur Web</h1>
@@ -34,22 +37,23 @@
                 <p>Basé à Antananarivo, je suis passionné par les marchés financiers et le code. <br> De l'analyse des Killzones sur TradingView à la structuration de pages HTML/CSS,<br> je construis mon expertise jour après jour.</p>
             </div>
             <div class="btn">
-                <button>Découvrir mon travail</button>
+                <a href="#services"><button>Découvrir mon travail</button></a>
             </div>
         </div>
         <div class="droite">
-            <img src="image/Profil.jpg" alt="">
+            <img src="image/Profil.jpg" alt="Photo de profil de Aina Herinjato">
         </div>
     </section>
-    <section class="a-propos">
+
+    <section class="a-propos" id="a-propos">
         <div class="a-propos-haut">
             <div>
-            <h2> A propos de moi</h2>
+                <h2>À propos de moi</h2>
             </div>
             <div class="presentation">
-                <p class="parcours"> <strong>Mon parcours:</strong> Actuellement en première année d'informatique (L1), je consolide mes bases techniques tout en développant une expertise pratique en développement web (HTML, CSS, JavaScript, Python, WordPress). <br> En parallèle, mon poste d'Assistant Administratif chez Les 58ème Visiteurs m'a permis de forger un solide sens de l'organisation et des responsabilités.</p>
-                <p class="passion"> <strong>Mes Passions:</strong>Je suis un profil polyvalent, fasciné par les possibilités du numérique. Je me passionne pour la création d'interfaces, le design (modélisation 3D sur Blender, Canva), et l'IA générative. <br> J'ai également un fort esprit analytique que j'applique en tant que trader indépendant, spécialisé dans l'analyse technique des marchés de l'or.</p>
-                <p class="objectif"> <strong>Mes Objectif:</strong> Mon but est de fusionner ma créativité technique et ma logique analytique pour bâtir des applications web utiles (comme des outils de gestion ou des portfolios interactifs). <br> Je cherche constamment à monter en compétences et à saisir de nouvelles opportunités professionnelles stimulantes dans l'écosystème tech d'Antananarivo.</p>
+                <p class="parcours"> <strong>Mon parcours :</strong> Actuellement en première année d'informatique (L1), je consolide mes bases techniques tout en développant une expertise pratique en développement web (HTML, CSS, JavaScript, Python, WordPress). <br> En parallèle, mon poste d'Assistant Administratif chez Les 58ème Visiteurs m'a permis de forger un solide sens de l'organisation et des responsabilités.</p>
+                <p class="passion"> <strong>Mes Passions :</strong> Je suis un profil polyvalent, fasciné par les possibilités du numérique. Je me passionne pour la création d'interfaces, le design (modélisation 3D sur Blender, Canva), et l'IA générative. <br> J'ai également un fort esprit analytique que j'applique en tant que trader indépendant, spécialisé dans l'analyse technique des marchés de l'or.</p>
+                <p class="objectif"> <strong>Mes Objectifs :</strong> Mon but est de fusionner ma créativité technique et ma logique analytique pour bâtir des applications web utiles (comme des outils de gestion ou des portfolios interactifs). <br> Je cherche constamment à monter en compétences et à saisir de nouvelles opportunités professionnelles stimulantes dans l'écosystème tech d'Antananarivo.</p>
             </div>
         </div>
         <div class="competence">
@@ -58,11 +62,72 @@
                 <li>HTML5</li>
                 <li>CSS3</li>
                 <li>JavaScript</li>
-                <li>UI / UX DISIGN</li>
+                <li>UI / UX DESIGN</li>
                 <li>GIT / GITHUB</li>
             </ul>
         </div>
     </section>
-    
+
+    <section class="services-section" id="services">
+        <!-- Le reste de ton HTML pour les services, le contact et le footer est parfait, 
+             assure-toi juste que la section contact garde bien id="contact" -->
+        <div class="services-header">
+            <h2>Services :</h2>
+        </div>
+        <div class="services-container">
+            <div class="service-card">
+                <i class="fa-solid fa-code" aria-hidden="true"></i>
+                <p>Intégration web, création de site HTML / CSS propre</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-pen-nib" aria-hidden="true"></i>
+                <p>Maquettage UI / UX design épuré et wireframe complet</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-mobile" aria-hidden="true"></i>
+                <p>Site responsive adapté aux smartphones</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <!-- Code du formulaire inchangé -->
+        <div class="contact-header">
+            <h2>Me contacter</h2>
+            <p>Une idée de projet web, une opportunité ou simplement envie d'échanger ? N'hésitez pas à me laisser un message.</p>
+        </div>
+        <div class="form-container">
+            <form action="#" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Adresse e-mail</label>
+                    <input type="email" id="email" name="email" placeholder="votre.email@exemple.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Votre message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Comment puis-je vous aider ?" required></textarea>
+                </div>
+                <button type="submit" class="btn-envoyer">Envoyer le message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <!-- Code du footer inchangé -->
+        <div class="footer-content">
+            <div class="copyright">
+                <p>&copy; 2026 Aina Herinjato. Tous droits réservés.</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/Tommyshelby-Ah" target="_blank" rel="noopener noreferrer" class="github-link">
+                    <i class="fa-brands fa-github" aria-hidden="true"></i> Mon GitHub
+                </a>
+            </div>
+        </div>
+    </footer>
 </body>
+<script src="script.js"></script>
 </html>

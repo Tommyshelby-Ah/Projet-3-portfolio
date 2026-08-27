@@ -1,105 +1,117 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+/* Variables CSS pour unifier tes couleurs */
+:root {
+    --primary-color: #0056b3; /* Un bleu professionnel et profond */
+    --accent-color: #007bff;
+    --text-dark: #1a1a1a;
+    --text-light: #555555;
+    --bg-light: #f8fafc;
+}
 
-body{
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "poppins" , sans-serif;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth; /* Ajoute un défilement fluide au clic sur le menu */
 }
 
-header{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* Header & Menu */
+header {
     width: 100%;
-    padding: 20px 5%;
+    padding: 15px 5%;
     box-sizing: border-box;
+    background-color: white;
+    position: sticky; /* Garde le menu en haut au défilement */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-section{
+.header-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .logo {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 24px;
 }
 
-.logo-div {
-    width: 30%;
+.logo span {
+    color: var(--primary-color);
 }
 
-.logo span{
-    color: navy
-}
-.menu ul{
+.menu ul {
     display: flex;
     align-items: center;
-    font-size: 14px;
     list-style: none;
     padding: 0;
     margin: 0;
-    gap: 10px;
+    gap: 15px;
 }
 
 ul li a {
     text-decoration: none;
-    color: #999;
-    transition: 0.5s;
-    font-size: 14px;
-    padding: 10px 15px;
-    border-color: 20px;
-}
-
-ul li a:hover {
-    background-color: navy;
-    padding: 15px;
-    color: white;
-    font-weight: bold;
+    color: #555;
+    transition: 0.3s;
+    font-size: 15px;
+    padding: 8px 16px;
     border-radius: 20px;
 }
 
+ul li a:hover {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 500;
+}
 
-.introduction{
+/* Introduction */
+.introduction {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 20px 5%;
-    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 5%;
+    gap: 40px;
+    box-sizing: border-box;
 }
 
-.gauche{
-    width: 45%;
+.gauche {
+    width: 55%;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 20px;
 }
 
-.titre h1{
-    font-size: 2rem;
-    color: #1a1a1a;
+.titre h1 {
+    font-size: 2.5rem;
+    color: var(--text-dark);
     margin: 0;
+    line-height: 1.2;
 }
 
 .description p {
     font-size: 1.1rem;
     line-height: 1.6;
-    color: #555555;
-    font-family: "poppins" , sans-serif;
+    color: var(--text-light);
 }
 
-.btn button{
-    background-color: navy;
+.btn a {
+    text-decoration: none;
+}
+
+.btn button {
+    background-color: var(--primary-color);
     padding: 12px 28px;
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: 600;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -107,179 +119,361 @@ ul li a:hover {
     color: white;
 }
 
-.btn button:hover{
-    background-color: #000050;
+.btn button:hover {
+    background-color: var(--text-dark);
     transform: translateY(-3px);
 }
 
-.btn{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-.droite{
+.droite {
     width: 40%;
     display: flex;
-    justify-content: end;
-    margin: 20px;
+    justify-content: center;
 }
+
 .droite img {
-    width: 350px;
-    height: 450px;
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    aspect-ratio: 4/5;
     object-fit: cover;
-    border: 8px solid navy;
+    border: 8px solid var(--primary-color);
     box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
     border-radius: 2rem;
 }
 
-/* Conteneur global de la section A propos */
+/* À propos */
 .a-propos {
-    display: flex; 
-    justify-content: space-between;
-    align-items: flex-start;
+    display: flex;
+    justify-content: center;
     width: 100%;
-    padding: 40px 5%; /* Le 5% aligne parfaitement les bords avec .introduction */
-    gap: 80px; /* Même espacement central que .introduction */
-    background-color: #f8fafc;
+    background-color: var(--bg-light);
     box-sizing: border-box;
 }
 
-/* Partie gauche : Titre et texte de présentation */
-.a-propos-haut {
-    width: 45%; /* Exactement la même largeur que .gauche */
+.a-propos-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    padding: 80px 5%;
+    gap: 60px;
+    width: 100%;
 }
-    
+
+.a-propos-haut {
+    width: 60%;
+}
 
 .a-propos-haut h2 {
-    color: #1e293b;
+    color: var(--text-dark);
     font-size: 2.2em;
     margin-bottom: 25px;
     margin-top: 0;
 }
+
 .presentation p {
-    color: #475569;
-    line-height: 1.7; /* Aère énormément la lecture */
+    color: var(--text-light);
+    line-height: 1.7;
     margin-bottom: 20px;
     font-size: 1.05em;
 }
 
 .presentation strong {
-    color: #0f172a; /* Met les mots-clés bien en évidence */
+    color: var(--text-dark);
 }
 
-.competence h2{
-    color: #1e293b;
+.competence {
+    width: 35%;
+}
+
+.competence h2 {
+    color: var(--text-dark);
     font-size: 1.8rem;
     margin-bottom: 20px;
-    text-align: center;
-}
-
-/* Partie droite : La boîte de compétences */
-.competence {
-    width: 40%; /* Exactement la même largeur que .droite */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin: 80px; /* Exactement la même marge que .droite */
 }
 
 .competence ul {
-    list-style-type: none; /* Enlève les puces (points) classiques */
+    list-style-type: none;
     padding: 0;
-    margin: 80px;
+    margin: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 12px; /* Espace entre chaque compétence */
+    gap: 12px;
 }
 
-/* Style des "étiquettes" de compétences */
 .competence li {
     background-color: #e2e8f0;
     color: #334155;
     padding: 12px 20px;
     border-radius: 8px;
-    font-weight: bold;
-    text-align: center;
-    transition: all 0.3s ease; /* Pour l'animation au survol */
-    cursor: default;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
-/* Petit effet sympa quand la souris passe sur une compétence */
 .competence li:hover {
-    background-color: #3b82f6; /* Devient bleu */
+    background-color: var(--accent-color);
     color: white;
-    transform: translateY(-3px); /* Se soulève légèrement */
-    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+/* Services (Code précédent conservé et nettoyé) */
+.services-section {
+    padding: 80px 20px;
+    background-color: white;
+    text-align: center;
+}
+
+.services-header h2 {
+    font-size: 2.2rem;
+    color: var(--text-dark);
+    margin-bottom: 40px;
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background: white;
+    padding: 40px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f1f1f1;
+}
+
+.service-card i {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.service-card p {
+    color: var(--text-light);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact */
+.contact-section {
+    padding: 80px 20px;
+    background-color: var(--bg-light);
+    text-align: center;
+}
+
+.contact-header h2 {
+    font-size: 2.2rem;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.contact-header p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    line-height: 1.5;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+.btn-envoyer {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-envoyer:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Footer */
+.site-footer {
+    background-color: #1e293b;
+    color: white;
+    padding: 30px 20px;
+    font-family: inherit;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.copyright p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #ced4da;
+}
+
+.github-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s ease;
+}
+
+.github-link:hover {
+    color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* ========================================= */
+/* MÉDIA QUERIES (RESPONSIVE DESIGN COMPLET) */
+/* ========================================= */
+
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 @media (max-width: 900px) {
-    /* Adaptation du Header (Menu) */
-    header section {
+    .header-container {
         flex-direction: column;
         gap: 15px;
     }
-    .logo-div {
-        width: 100%;
+    
+    .introduction, .a-propos-container {
+        flex-direction: column;
         text-align: center;
-    }
-    .menu ul {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    /* Passage en une seule colonne pour les sections */
-    .introduction, .a-propos {
-        flex-direction: column; /* Empile les éléments de haut en bas */
         padding: 40px 5%;
-        gap: 40px; /* Réduit l'espace géant entre les blocs */
+        gap: 40px;
     }
 
-    /* Chaque bloc prend désormais toute la largeur de l'écran */
     .gauche, .droite, .a-propos-haut, .competence {
         width: 100%;
-        margin: 0;
-        align-items: center; /* Centre le contenu horizontalement */
-        text-align: center; /* Centre le texte */
+        align-items: center;
     }
 
-    /* Centrer le bouton */
-    .btn {
-        justify-content: center;
+    .titre h1 {
+        font-size: 2rem;
+    }
+    
+    .description p {
+        br { display: none; } /* Enlève les sauts de ligne forcés sur mobile */
     }
 
-    /* Ajuster l'image pour qu'elle ne déborde pas */
-    .droite img {
-        width: 100%;
-        max-width: 350px; /* Garde une taille max raisonnable */
-        height: auto; /* Ajuste la hauteur automatiquement */
-    }
-
-    /* Ajuster la liste des compétences */
     .competence h2 {
-        width: 100%;
+        text-align: center;
     }
     
     .competence ul {
-        width: 100%;
-        max-width: 350px;
+        align-items: stretch;
+        max-width: 400px;
+        margin: 0 auto;
     }
 }
 
 @media (max-width: 480px) {
-    /* Passe le menu en colonne */
     .menu ul {
-        flex-direction: column;
-        width: 100%;
-        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
     }
     
-    /* Élargit la zone cliquable pour faciliter la navigation tactile */
     ul li a {
-        display: block; 
-        text-align: center;
-        width: 100%;
-        padding: 12px;
+        display: block;
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    .form-container {
+        padding: 20px;
+    }
+    
+    .droite img {
+        max-width: 280px;
     }
 }
+
+/* État actif du menu de navigation */
+.menu ul li a.active {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 500;
+}
+
+/* Animations au défilement (Scroll Reveal) */
+.hidden-element {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Classe ajoutée par le JavaScript quand l'élément apparaît à l'écran */
+.hidden-element.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Petit délai pour que les cartes de services apparaissent l'une après l'autre */
+.service-card:nth-child(2) { transition-delay: 0.2s; }
+.service-card:nth-child(3) { transition-delay: 0.4s; }
