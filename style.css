@@ -9,6 +9,11 @@
     --glass-border: rgba(255, 255, 255, 0.08);
 }
 
+html {
+    scroll-padding-top: 90px;
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -39,6 +44,22 @@ nav {
 
 .logo { font-size: 1.5rem; font-weight: bold; }
 .logo span { color: var(--accent-blue); }
+
+/* --- Style du Burger --- */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 101;
+}
+
+.burger-menu span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-light);
+    transition: 0.3s ease;
+}
 
 .nav-links { display: flex; list-style: none; gap: 2rem; }
 .nav-links a { color: var(--text-light); text-decoration: none; transition: 0.3s; }
@@ -81,7 +102,7 @@ p { color: var(--text-muted); }
     position: relative;
     z-index: 2;
 }
-/* Effet de lueur derrière la photo */
+
 .glow-circle {
     position: absolute;
     top: 50%;
@@ -171,50 +192,30 @@ input:focus, textarea:focus { border-color: var(--accent-blue); background: rgba
 .hidden { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
 .show { opacity: 1; transform: translateY(0); }
 
-/* Footer */
-.site-footer {
-    background-color: #1e293b;
-    color: white;
-    padding: 30px 20px;
-    font-family: inherit;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-.copyright p {
-    margin: 0;
-    font-size: 0.95rem;
-    color: #ced4da;
-}
-
-.github-link {
-    color: white;
-    text-decoration: none;
-    font-size: 1.05rem;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: 0.3s ease;
-}
-
-.github-link:hover {
-    color: var(--accent-color);
-    transform: translateY(-2px);
-}
-
 /* --- Responsive (Mobile) --- */
 @media (max-width: 768px) {
-    .hero { flex-direction: column; text-align: center; padding-top: 100px; }
+    .hero { flex-direction: column; text-align: center; padding-top: 120px; }
     .hero-content { max-width: 100%; margin-bottom: 3rem; }
-    .bento-grid { grid-template-columns: 1fr; }
+    
+    .bento-grid { grid-template-columns: 1fr; padding: 4rem 5%; }
+    .services, .contact { padding: 4rem 5%; }
     .cards-container { flex-direction: column; align-items: center; }
-    nav ul { display: none; } /* Prévoir un menu burger pour plus tard */
+    
+    .burger-menu { display: flex; }
+    
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: var(--bg-dark);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.4s ease;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-links.active-menu { right: 0; }
 }
