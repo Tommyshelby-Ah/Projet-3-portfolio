@@ -6,29 +6,7 @@ window.addEventListener('scroll', () => {
     document.getElementById("scroll-progress").style.width = scrolled;
 });
 
-// --- 2. Simulation de l'API XAU/USD (Variation aléatoire réaliste) ---
-const goldPriceElement = document.getElementById('gold-price');
-let currentPrice = 2450.50; // Prix de base fictif
-
-function updateGoldPrice() {
-    // Simule une petite variation entre -0.50 et +0.50
-    const change = (Math.random() - 0.5).toFixed(2); 
-    currentPrice = (currentPrice + parseFloat(change)).toFixed(2);
-    
-    goldPriceElement.innerText = `$${currentPrice}`;
-    
-    // Changement de couleur selon la tendance
-    if (change > 0) {
-        goldPriceElement.className = 'price-up';
-    } else if (change < 0) {
-        goldPriceElement.className = 'price-down';
-    }
-}
-// Mise à jour toutes les 3 secondes
-setInterval(updateGoldPrice, 3000);
-updateGoldPrice();
-
-// --- 3. Effet "Machine à écrire" ---
+// --- 2. Effet "Machine à écrire" ---
 const words = ["Trader Gold", "Développeur Web", "Analyste SMC / ICT", "Intégrateur WP"];
 let i = 0;
 let timer;
@@ -68,7 +46,7 @@ function deletingEffect() {
 }
 typingEffect();
 
-// --- 4. Animation d'apparition au défilement (Intersection Observer) ---
+// --- 3. Animation d'apparition au défilement (Intersection Observer) ---
 const hiddenElements = document.querySelectorAll('.hidden');
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -81,7 +59,7 @@ const observer = new IntersectionObserver((entries) => {
 
 hiddenElements.forEach((el) => observer.observe(el));
 
-// --- 5. Menu Burger Mobile ---
+// --- 4. Menu Burger Mobile ---
 const burger = document.querySelector('.burger-menu');
 const navLinks = document.querySelector('.nav-links');
 const links = document.querySelectorAll('.nav-links li a');
@@ -96,7 +74,7 @@ links.forEach(link => {
     });
 });
 
-// --- 6. Effet 3D sur les cartes (Vanilla Tilt léger) ---
+// --- 5. Effet 3D sur les cartes (Vanilla Tilt léger) ---
 const cards = document.querySelectorAll('.tilt-card');
 cards.forEach(card => {
     card.addEventListener('mousemove', e => {
