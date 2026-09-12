@@ -3,119 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Aina Herinjato</title>
+    <title>Aina Herinjato - Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/8fd46e80f1.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- Ajout d'une classe header-container pour gérer le flex sans utiliser <section> -->
-    <header>
-        <div class="header-container">
-            <div class="logo-div">
-                <div class="logo">
-                    <p>Aina.<span>Herinjato</span></p>
-                </div>
-            </div>
-            <nav class="menu">
-                <ul>
-                    <li><a href="#accueil">HOME</a></li>
-                    <li><a href="#a-propos">ABOUT</a></li>
-                    <li><a href="#services">SERVICES</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
-                </ul>
-            </nav>
+    <nav>
+        <div class="logo">Aina<span>.Herinjato</span></div>
+        <ul class="nav-links">
+            <li><a href="#accueil" class="active">Accueil</a></li>
+            <li><a href="#propos">À propos</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header id="accueil" class="hero hidden">
+        <div class="hero-content">
+            <h1>Aina Herinjato</h1>
+            <h2 class="subtitle">
+                <span class="gold-text">Trader Gold</span> & 
+                <span class="blue-text">Développeur Web</span>
+            </h2>
+            <p>Fusionner l'analyse technique des marchés financiers et la création d'interfaces web performantes.</p>
+            <a href="#contact" class="btn primary-btn">Découvrir mon travail</a>
+        </div>
+        <div class="hero-image">
+            <div class="glow-circle"></div>
+            <!-- Remplace par le chemin de ta photo -->
+            <img src="image/Profil.jpg" alt="Portrait Aina"> 
         </div>
     </header>
 
-    <!-- Ajout des ID pour la navigation -->
-    <section class="introduction" id="accueil">
-        <div class="gauche">
-            <div class="titre">
-                <h1>Aina Herinjato - <br> Trader Gold & Développeur Web</h1>
-            </div>
-            <div class="description">
-                <p>Basé à Antananarivo, je suis passionné par les marchés financiers et le code. <br> De l'analyse des Killzones sur TradingView à la structuration de pages HTML/CSS,<br> je construis mon expertise jour après jour.</p>
-            </div>
-            <div class="btn">
-                <a href="#services"><button>Découvrir mon travail</button></a>
-            </div>
+    <section id="propos" class="bento-grid hidden">
+        <div class="glass-card about-card">
+            <h3>À propos de moi</h3>
+            <p>Passionné par la logique et la stratégie, mon parcours atypique me permet d'allier la rigueur de l'analyse SMC/ICT sur les marchés de l'or à la créativité du développement web.</p>
         </div>
-        <div class="droite">
-            <img src="image/Profil.jpg" alt="Photo de profil de Aina Herinjato">
-        </div>
-    </section>
-
-    <section class="a-propos" id="a-propos">
-        <div class="a-propos-haut">
-            <div>
-                <h2>À propos de moi</h2>
-            </div>
-            <div class="presentation">
-                <p class="parcours"> <strong>Mon parcours :</strong> Actuellement en première année d'informatique (L1), je consolide mes bases techniques tout en développant une expertise pratique en développement web (HTML, CSS, JavaScript, Python, WordPress). <br> En parallèle, mon poste d'Assistant Administratif chez Les 58ème Visiteurs m'a permis de forger un solide sens de l'organisation et des responsabilités.</p>
-                <p class="passion"> <strong>Mes Passions :</strong> Je suis un profil polyvalent, fasciné par les possibilités du numérique. Je me passionne pour la création d'interfaces, le design (modélisation 3D sur Blender, Canva), et l'IA générative. <br> J'ai également un fort esprit analytique que j'applique en tant que trader indépendant, spécialisé dans l'analyse technique des marchés de l'or.</p>
-                <p class="objectif"> <strong>Mes Objectifs :</strong> Mon but est de fusionner ma créativité technique et ma logique analytique pour bâtir des applications web utiles (comme des outils de gestion ou des portfolios interactifs). <br> Je cherche constamment à monter en compétences et à saisir de nouvelles opportunités professionnelles stimulantes dans l'écosystème tech d'Antananarivo.</p>
-            </div>
-        </div>
-        <div class="competence">
-            <h2>Mes Compétences</h2>
-            <ul>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>JavaScript</li>
-                <li>UI / UX DESIGN</li>
-                <li>GIT / GITHUB</li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="services-section" id="services">
-        <!-- Le reste de ton HTML pour les services, le contact et le footer est parfait, 
-             assure-toi juste que la section contact garde bien id="contact" -->
-        <div class="services-header">
-            <h2>Services :</h2>
-        </div>
-        <div class="services-container">
-            <div class="service-card">
-                <i class="fa-solid fa-code" aria-hidden="true"></i>
-                <p>Intégration web, création de site HTML / CSS propre</p>
-            </div>
-            <div class="service-card">
-                <i class="fa-solid fa-pen-nib" aria-hidden="true"></i>
-                <p>Maquettage UI / UX design épuré et wireframe complet</p>
-            </div>
-            <div class="service-card">
-                <i class="fa-solid fa-mobile" aria-hidden="true"></i>
-                <p>Site responsive adapté aux smartphones</p>
+        <div class="glass-card skills-card">
+            <h3>Mes Compétences</h3>
+            <div class="tags">
+                <span class="tag tech">HTML / CSS / JS</span>
+                <span class="tag tech">Python</span>
+                <span class="tag tech">WordPress</span>
+                <span class="tag trade">SMC / ICT</span>
+                <span class="tag trade">XAU/USD</span>
             </div>
         </div>
     </section>
 
-    <section class="contact-section" id="contact">
-        <!-- Code du formulaire inchangé -->
-        <div class="contact-header">
-            <h2>Me contacter</h2>
-            <p>Une idée de projet web, une opportunité ou simplement envie d'échanger ? N'hésitez pas à me laisser un message.</p>
+    <section id="services" class="services hidden">
+        <h3 class="section-title">Services</h3>
+        <div class="cards-container">
+            <div class="glass-card service-item glow-hover">
+                <div class="icon blue-glow">&lt;/&gt;</div>
+                <h4>Développement Web</h4>
+                <p>Création de sites vitrines et applications sur mesure.</p>
+            </div>
+            <div class="glass-card service-item glow-hover">
+                <div class="icon gold-glow">📈</div>
+                <h4>Analyse & Trading</h4>
+                <p>Analyse technique approfondie et stratégies de marché.</p>
+            </div>
         </div>
-        <div class="form-container">
-            <form action="#" method="POST" class="contact-form">
-                <div class="form-group">
-                    <label for="nom">Nom</label>
-                    <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Adresse e-mail</label>
-                    <input type="email" id="email" name="email" placeholder="votre.email@exemple.com" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Votre message</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Comment puis-je vous aider ?" required></textarea>
-                </div>
-                <button type="submit" class="btn-envoyer">Envoyer le message</button>
+    </section>
+
+    <section id="contact" class="contact hidden">
+        <div class="glass-card form-container">
+            <h3>Me contacter</h3>
+            <p>Une idée de projet web ou une opportunité ? Discutons-en.</p>
+            <form>
+                <input type="text" placeholder="Nom" required>
+                <input type="email" placeholder="Adresse e-mail" required>
+                <textarea placeholder="Votre message" rows="5" required></textarea>
+                <button type="submit" class="btn primary-btn">Envoyer le message</button>
             </form>
         </div>
     </section>
-
-    <footer class="site-footer">
+    
+<footer class="site-footer">
         <!-- Code du footer inchangé -->
         <div class="footer-content">
             <div class="copyright">
@@ -128,6 +93,6 @@
             </div>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
 </html>
