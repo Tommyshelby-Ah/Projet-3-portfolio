@@ -7,9 +7,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Barre de progression façon "Trendline" -->
+    <div id="scroll-progress"></div>
+
     <nav>
         <div class="logo">Aina<span>.Herinjato</span></div>
         
+        <!-- Ticker XAU/USD -->
+        <div class="market-ticker">
+            <span class="ticker-symbol">XAU/USD</span>
+            <span id="gold-price">Chargement...</span>
+        </div>
+
         <div class="burger-menu">
             <span></span>
             <span></span>
@@ -18,8 +27,9 @@
 
         <ul class="nav-links">
             <li><a href="#accueil" class="active">Accueil</a></li>
+            <li><a href="#parcours">Parcours</a></li>
             <li><a href="#propos">À propos</a></li>
-            <li><a href="#services">Services</a></li>
+            <li><a href="#projets">Projets</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -28,53 +38,97 @@
         <div class="hero-content">
             <h1>Aina Herinjato</h1>
             <h2 class="subtitle">
-                <span class="gold-text">Trader Gold</span> & 
-                <span class="blue-text">Développeur Web</span>
+                <span class="blue-text" id="typewriter"></span><span class="cursor">|</span>
             </h2>
             <p>Fusionner l'analyse technique des marchés financiers et la création d'interfaces web performantes.</p>
-            <a href="#contact" class="btn primary-btn">Découvrir mon travail</a>
+            <a href="#projets" class="btn primary-btn">Découvrir mon travail</a>
         </div>
         <div class="hero-image">
             <div class="glow-circle"></div>
+            <!-- Vous pourrez insérer ici un rendu 3D Blender ou votre photo -->
             <img src="ta-photo.jpg" alt="Portrait Aina"> 
         </div>
     </header>
 
-    <section id="propos" class="bento-grid hidden">
-        <div class="glass-card about-card">
-            <h3>À propos de moi</h3>
-            <p>Passionné par la logique et la stratégie, mon parcours atypique me permet d'allier la rigueur de l'analyse SMC/ICT sur les marchés de l'or à la créativité du développement web.</p>
-        </div>
-        <div class="glass-card skills-card">
-            <h3>Mes Compétences</h3>
-            <div class="tags">
-                <span class="tag tech">HTML / CSS / JS</span>
-                <span class="tag tech">Python</span>
-                <span class="tag tech">WordPress</span>
-                <span class="tag trade">SMC / ICT</span>
-                <span class="tag trade">XAU/USD</span>
+    <!-- Nouvelle Section : Timeline (Parcours) -->
+    <section id="parcours" class="timeline-section hidden">
+        <h3 class="section-title">Mon Parcours</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content glass-card">
+                    <h4>Étudiant L1 Informatique</h4>
+                    <p class="date">Actuellement</p>
+                    <p>Apprentissage approfondi des algorithmes et du développement web, en jonglant avec les cours du soir.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content glass-card">
+                    <h4>Assistant Administratif</h4>
+                    <p class="date">Les 58ème Visiteurs</p>
+                    <p>Gestion administrative rigoureuse, en parallèle de mon activité de trader indépendant sur l'or.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content glass-card">
+                    <h4>Stage Gestion d'Entreprise</h4>
+                    <p class="date">Makina Océan Indien (2020)</p>
+                    <p>Saisie de données commerciales sur INCWO et gestion documentaire.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="services" class="services hidden">
-        <h3 class="section-title">Services</h3>
-        <div class="cards-container">
-            <div class="glass-card service-item glow-hover">
-                <div class="icon blue-glow">&lt;/&gt;</div>
-                <h4>Développement Web</h4>
-                <p>Création de sites vitrines et applications sur mesure.</p>
+    <section id="propos" class="bento-grid hidden">
+        <div class="glass-card about-card tilt-card">
+            <h3>À propos de moi</h3>
+            <p>Passionné par la logique et la stratégie, mon parcours me permet d'allier la rigueur de l'analyse SMC/ICT sur les marchés de l'or à la créativité du développement web (Front-End & Back-End).</p>
+        </div>
+        <div class="glass-card skills-card tilt-card">
+            <h3>Mes Compétences</h3>
+            <div class="tags">
+                <span class="tag tech">HTML / CSS / JS</span>
+                <span class="tag tech">Python</span>
+                <span class="tag tech">WordPress / Elementor</span>
+                <span class="tag trade">SMC / ICT</span>
+                <span class="tag trade">TradingView</span>
             </div>
-            <div class="glass-card service-item glow-hover">
-                <div class="icon gold-glow">📈</div>
-                <h4>Analyse & Trading</h4>
-                <p>Analyse technique approfondie et stratégies de marché.</p>
+        </div>
+    </section>
+
+    <!-- Nouvelle Section : Projets -->
+    <section id="projets" class="projects hidden">
+        <h3 class="section-title">Mes Projets</h3>
+        <div class="cards-container">
+            <div class="glass-card project-card tilt-card glow-hover">
+                <h4>AH Budget</h4>
+                <p>Application et tableur de suivi budgétaire configuré en Ariary (MGA) pour la gestion financière locale.</p>
+                <div class="project-tags">
+                    <span class="tag">App</span>
+                </div>
+            </div>
+            <div class="glass-card project-card tilt-card glow-hover">
+                <h4>Design & Modélisation</h4>
+                <p>Création de modèles architecturaux sur Blender et conception d'éléments graphiques pour impression.</p>
+                <div class="project-tags">
+                    <span class="tag">3D</span>
+                    <span class="tag">Design</span>
+                </div>
+            </div>
+            <div class="glass-card project-card tilt-card glow-hover">
+                <h4>Environnement Local WP</h4>
+                <p>Déploiement et configuration d'environnements de développement avec WampServer et phpMyAdmin.</p>
+                <div class="project-tags">
+                    <span class="tag">WordPress</span>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="contact" class="contact hidden">
-        <div class="glass-card form-container">
+        <div class="glass-card form-container tilt-card">
             <h3>Me contacter</h3>
             <p>Une idée de projet web ou une opportunité ? Discutons-en.</p>
             <form>
